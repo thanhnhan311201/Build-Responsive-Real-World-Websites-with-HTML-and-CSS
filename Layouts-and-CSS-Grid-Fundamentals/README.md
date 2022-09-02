@@ -1,6 +1,12 @@
 ##### Table of content
 
-1. [Layout là gì?](#layout-là-gì?)
+- [Lý thuyết cơ bản về Layout và CSS Grid](#lý-thuyết-cơ-bản-về-layout-và-css-grid)
+  - [Layout là gì?](#layout-là-gì)
+  - [Các loại Layout](#các-loại-layout)
+  - [Các cách để xây dựng bố cục với CSS](#các-cách-để-xây-dựng-bố-cục-với-css)
+    - [Float Layout](#float-layout)
+    - [Flexbox layout](#flexbox-layout)
+    - [CSS Grid layout](#css-grid-layout)
 
 # Lý thuyết cơ bản về Layout và CSS Grid
 
