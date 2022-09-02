@@ -11,9 +11,7 @@
 - **Building a layout** hay còn gọi _thiết kế bố cục_ là việc chúng ta sắp xếp các phần tử của website vào một cấu trúc trực quan nào đó, thay vì chúng ta trình bày các phần tử của website theo trình tự nối tiếp nhau từ trên xuống dưới (normal flow). Với việc thiết kế bố cục sẽ giúp cho website trở nên sinh động và trực quan hơn, và dễ dàng trong việc truyền tải nội dung cũng như ý tưởng của website đến người dùng hơn.
 
   **Trang web không có thiết kế bố cục:**
-
   ![markdown](/Screenshots/normal-flow-web.png)
 
   **Trang web có thiết kế bố cục:**
-
   ![markdown](/Screenshots/css-grid-web.png)
