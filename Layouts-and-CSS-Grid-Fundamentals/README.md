@@ -7,7 +7,7 @@
     - [Float Layout](#float-layout)
       - [Float Layout là gì?](#float-layout-là-gì)
       - [Thuộc tính _clear_](#thuộc-tính-clear)
-      - [Khắc phục hiện tưởng thẻ cha thu gọn chiều cao](#khắc-phục-hiện-tưởng-thẻ-cha-thu-gọn-chiều-cao)
+      - [Khắc phục hiện tượng thẻ cha thu gọn chiều cao](#khắc-phục-hiện-tượng-thẻ-cha-thu-gọn-chiều-cao)
     - [Flexbox layout](#flexbox-layout)
     - [CSS Grid layout](#css-grid-layout)
 
@@ -85,7 +85,7 @@ Giả sử bây giờ chúng ta muốn đẩy thẻ div nội dung xuống dư�
 
 ![](/Screenshots/clear-example.png)
 
-#### Khắc phục hiện tưởng thẻ cha thu gọn chiều cao
+#### Khắc phục hiện tượng thẻ cha thu gọn chiều cao
 
 - Trong phần lưu ý ở **Float Layout**, chúng ta đã biết thẻ cha sẽ không tự điều chính chiều cao cho các phần tử con được áp dụng thuộc tính _float_, điều đó sẽ xảy ra hiện tượng thu gọn chiều cao và không còn chứa các phần tử chứa bên trong đó (như hình bên dưới):
 
