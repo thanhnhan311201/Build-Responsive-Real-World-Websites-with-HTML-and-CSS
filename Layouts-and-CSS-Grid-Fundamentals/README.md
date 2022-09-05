@@ -7,6 +7,7 @@
     - [Float Layout](#float-layout)
       - [Float Layout là gì?](#float-layout-là-gì)
       - [Thuộc tính _clear_](#thuộc-tính-clear)
+      - [Khắc phục hiện tưởng thẻ cha thu gọn chiều cao](#khắc-phục-hiện-tưởng-thẻ-cha-thu-gọn-chiều-cao)
     - [Flexbox layout](#flexbox-layout)
     - [CSS Grid layout](#css-grid-layout)
 
@@ -68,7 +69,7 @@ Sau khi áp dụng thuộc tính _float left_ cho thẻ img:
 #### Thuộc tính _clear_
 
 - Thuộc tính _clear_ là thuộc tính được dùng khi ta muốn xóa đi ảnh hưởng của thuộc tính _float_, cụ thể là xóa đi ảnh hưởng của phần tử ngay trước phần tử ta áp dụng thuộc tính _clear_.
-- Thuộc tính _clear_ có 3 giá trị chinh: left, right và both. Trong đó, ta hầu như dùng giá trị both xuyên suốt quá trình thiết kế.
+- Thuộc tính _clear_ có 3 giá trị chính: left, right và both. Trong đó, ta hầu như dùng giá trị both xuyên suốt quá trình thiết kế.
 - Chúng ta thường sử dụng thuộc tính _clear_ trong trường hợp khi chúng không muốn phần tử phía sau bị ảnh hưởng tới thuộc tính float. Ví dụ khi chúng ta có một trang html bao gồm 2 thẻ img và thẻ div chứa nội dung, trong đó thẻ img đã được _float left_ nên thẻ div chứa nội dung ở sau bị đây lên trên và đứng phía bên phải thẻ img (như hình bên dưới):
 
 ![](/Screenshots/non-clear-example-code.png)
@@ -77,11 +78,50 @@ Sau khi áp dụng thuộc tính _float left_ cho thẻ img:
 
 Giả sử bây giờ chúng ta muốn đẩy thẻ div nội dung xuống dưới để không nằm bên phải thẻ img nữa thì chúng ta phải làm sao?
 
-- Để có thể đẩy thẻ div nội dung xuống dưới thẻ img thì chúng ta có thể bỏ thuộc tính _float left_ của thẻ img đi, thì lúc này thẻ img sẽ nằm trong **normal flow** nên sẽ được bố trí theo thứ tự trước sau (thẻ img trước sẽ nằm trên, thẻ div nằm dưới). Ngoài ra chúng ta còn có thể sử dụng thuộc tính _clear_ cho thẻ div nhằm xóa bỏ đi sự ảnh hưởng thuộc tính _float_ của thẻ img trước đó, sau khi áp dụng thuộc tính _clear_ cho thẻ div chúng ta cũng sẽ có kết quả tương tự:
+- Để có thể đẩy thẻ div nội dung xuống dưới thẻ img thì chúng ta có thể bỏ thuộc tính _float left_ của thẻ img đi, thì lúc này thẻ img sẽ nằm trong **normal flow** nên sẽ được bố trí theo thứ tự trước sau (thẻ img trước sẽ nằm trên, thẻ div nằm dưới).
+- Ngoài ra chúng ta có thể sử dụng thuộc tính _clear_ cho thẻ div nhằm xóa bỏ đi sự ảnh hưởng thuộc tính _float_ của thẻ img trước đó, sau khi áp dụng thuộc tính _clear_ cho thẻ div chúng ta cũng sẽ có kết quả tương tự:
 
 ![](/Screenshots/clear-example-code.png)
 
 ![](/Screenshots/clear-example.png)
+
+#### Khắc phục hiện tưởng thẻ cha thu gọn chiều cao
+
+- Trong phần lưu ý ở **Float Layout**, chúng ta đã biết thẻ cha sẽ không tự điều chính chiều cao cho các phần tử con được áp dụng thuộc tính _float_, điều đó sẽ xảy ra hiện tượng thu gọn chiều cao và không còn chứa các phần tử chứa bên trong đó (như hình bên dưới):
+
+![](/Screenshots/collapse-height-with-float.png)
+
+Trong thẻ header có chứa 2 thẻ con là h1 và nav, tuy nhiên 2 phần tử con này đã được áp dụng thuộc tính _float_, cho nên lúc này thẻ header đã thu gọn chiều cao và không còn chứa 2 thẻ h1 và nav, chiều cao lúc này còn lại là nhờ thuộc tính _padding_ (như bỏ thuộc tính _padding_ thì thẻ header lúc này sẽ biến mất)
+
+- Chúng ta sẽ khắc phục trường hợp đó bằng cách tạo một thẻ div rỗng ngay sau thẻ h1 và thẻ nav, và áp dụng cho thẻ div rỗng đó thuộc tính _clear_. Lúc này thẻ div rỗng đó sẽ không bị ảnh hưởng bởi thuộc tính _float_ của 2 thẻ h1 và nav trước đó, và nó nằm ở dưới 2 thẻ đó.
+- Code:
+
+![](/Screenshots/fix-collapse-height-code-1.png)
+
+- Vì thẻ header vẫn còn chứa thẻ div rỗng (thẻ div rỗng không có áp dụng thuộc tính _float_) nên vẫn sẽ tự động điều chỉnh chiều cao để chứa thẻ div rỗng, và vì thẻ div rỗng nằm ở dưới 2 thẻ h1 và nav nên thẻ header sẽ vô tình chứa cả 2 thẻ đó.
+- Kết quả:
+
+![](/Screenshots/fix-collapse-height.png)
+
+- Tuy nhiên với cách như trên chúng ta sẽ làm cho file html bị lộn xộn không được gọn gàng với nhiều thẻ div rỗng (trong trường hợp có nhiều thẻ cha bị thu gọn chiều cao), để tránh việc tạo thẻ div rỗng chúng ta có thể sử dụng một thủ thuật sử dụng thuộc tính _clear_ với **pseudo-elements** được gọi là _clearfix_.
+- _clearfix_ là thủ thuật được sử dụng khá phổ biến trong cộng đông CSS.
+- Ý tưởng của thủ thuật cũng tương tư như cách chúng ta thêm một thẻ div rỗng vào ngay sau các phần tử _float_, tuy nhiên chúng ta sẽ sử dụng **pseudo-elemet after** để thêm một phần tử con ở cuối thay vì phải thêm thẻ div rỗng.
+- Cách áp dụng:
+
+![](/Screenshots/fix-collapse-height-code-2-html.png)
+
+```
+.clearfix::after {
+  content: "";
+  display: block;
+
+  clear: both;
+}
+```
+
+- Kết quả:
+
+![](/Screenshots/fix-collapse-height.png)
 
 ### Flexbox layout
 

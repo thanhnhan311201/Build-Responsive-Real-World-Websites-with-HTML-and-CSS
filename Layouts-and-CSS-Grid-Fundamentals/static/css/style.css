@@ -252,3 +252,14 @@ h1 {
 nav {
   float: right;
 }
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+
+  clear: both;
+}
