@@ -87,13 +87,13 @@ Giả sử bây giờ chúng ta muốn đẩy thẻ div nội dung xuống dư�
 
 #### Khắc phục hiện tượng thẻ cha thu gọn chiều cao
 
-- Trong phần lưu ý ở **Float Layout**, chúng ta đã biết thẻ cha sẽ không tự điều chính chiều cao cho các phần tử con được áp dụng thuộc tính _float_, điều đó sẽ xảy ra hiện tượng thu gọn chiều cao và không còn chứa các phần tử chứa bên trong đó (như hình bên dưới):
+- Trong phần lưu ý ở **Float Layout là gì?**, chúng ta đã biết thẻ cha sẽ không tự điều chỉnh chiều cao cho các phần tử con được áp dụng thuộc tính _float_, điều đó sẽ xảy ra hiện tượng thu gọn chiều cao và không còn chứa các phần tử chứa bên trong đó (như hình bên dưới):
 
 ![](/Screenshots/collapse-height-with-float.png)
 
 Trong thẻ header có chứa 2 thẻ con là h1 và nav, tuy nhiên 2 phần tử con này đã được áp dụng thuộc tính _float_, cho nên lúc này thẻ header đã thu gọn chiều cao và không còn chứa 2 thẻ h1 và nav, chiều cao lúc này còn lại là nhờ thuộc tính _padding_ (như bỏ thuộc tính _padding_ thì thẻ header lúc này sẽ biến mất)
 
-- Chúng ta sẽ khắc phục trường hợp đó bằng cách tạo một thẻ div rỗng ngay sau thẻ h1 và thẻ nav, và áp dụng cho thẻ div rỗng đó thuộc tính _clear_. Lúc này thẻ div rỗng đó sẽ không bị ảnh hưởng bởi thuộc tính _float_ của 2 thẻ h1 và nav trước đó, và nó nằm ở dưới 2 thẻ đó.
+- Chúng ta sẽ khắc phục trường hợp đó bằng cách tạo một thẻ div rỗng ngay sau thẻ h1 và thẻ nav, và áp dụng cho thẻ div rỗng đó thuộc tính _clear_. Lúc này thẻ div rỗng đó sẽ không bị ảnh hưởng bởi thuộc tính _float_ của 2 thẻ h1 và nav trước đó, và nó nằm ở dưới 2 h1 và nav.
 - Code:
 
 ![](/Screenshots/fix-collapse-height-code-1.png)
@@ -103,8 +103,8 @@ Trong thẻ header có chứa 2 thẻ con là h1 và nav, tuy nhiên 2 phần t�
 
 ![](/Screenshots/fix-collapse-height.png)
 
-- Tuy nhiên với cách như trên chúng ta sẽ làm cho file html bị lộn xộn không được gọn gàng với nhiều thẻ div rỗng (trong trường hợp có nhiều thẻ cha bị thu gọn chiều cao), để tránh việc tạo thẻ div rỗng chúng ta có thể sử dụng một thủ thuật sử dụng thuộc tính _clear_ với **pseudo-elements** được gọi là _clearfix_.
-- _clearfix_ là thủ thuật được sử dụng khá phổ biến trong cộng đông CSS.
+- Tuy nhiên với cách như trên chúng ta sẽ làm cho file html bị lộn xộn không được gọn gàng với nhiều thẻ div rỗng (trong trường hợp có nhiều thẻ cha bị thu gọn chiều cao), để tránh việc tạo thẻ div rỗng chúng ta có thể sử dụng một thủ thuật bằng cách kết hợp thuộc tính _clear_ với **pseudo-elements**, thủ thuật đó được gọi là _clearfix_.
+- _clearfix_ là thủ thuật được sử dụng khá phổ biến trong cộng đồng CSS ngày nay.
 - Ý tưởng của thủ thuật cũng tương tư như cách chúng ta thêm một thẻ div rỗng vào ngay sau các phần tử _float_, tuy nhiên chúng ta sẽ sử dụng **pseudo-elemet after** để thêm một phần tử con ở cuối thay vì phải thêm thẻ div rỗng.
 - Cách áp dụng:
 
@@ -118,6 +118,8 @@ Trong thẻ header có chứa 2 thẻ con là h1 và nav, tuy nhiên 2 phần t�
   clear: both;
 }
 ```
+
+Một điều lưu ý là thuộc tính _clear_ chỉ hoạt động trên các phần tử ở cấp độ block nên chúng ta phải set thuộc tính `display: block` cho **pseudo-element after** (vì mặc định pseudo-element ở cấp độ inline).
 
 - Kết quả:
 
