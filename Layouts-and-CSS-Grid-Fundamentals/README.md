@@ -5,6 +5,8 @@
   - [Các loại Layout](#các-loại-layout)
   - [Các cách để xây dựng bố cục với CSS](#các-cách-để-xây-dựng-bố-cục-với-css)
     - [Float Layout](#float-layout)
+      - [Float Layout là gì?](#float-layout-là-gì)
+      - [Thuộc tính _clear_](#thuộc-tính-clear)
     - [Flexbox layout](#flexbox-layout)
     - [CSS Grid layout](#css-grid-layout)
 
@@ -32,6 +34,7 @@
 - Tương tự, bên trong các component lớn cũng được cấu tạo từ các component nhỏ hơn, và các component nhỏ này cũng cần được thiết kế theo một **component layout** nào đó.
 
 Phân biệt giữa **page layout** và **component layout**:
+
 ![](/Screenshots/page-%26-component-layout.png)
 
 ## Các cách để xây dựng bố cục với CSS
@@ -42,10 +45,43 @@ Trong thiết kế một webpage, chúng ta có 3 cách để xây dựng bố c
 
 ### Float Layout
 
+#### Float Layout là gì?
+
 - **Float layout** là bố cục đầu tiên được áp dụng cho hầu hết tất cả các website, đây là một bố cục khá cũ và nó được nhanh chóng thay thế bởi các bố cục hiện đại hơn sau này. Tuy nhiên ngày nay vẫn còn một số website vẫn còn áp dụng kiểu bố cục như thế này.
-- **Float layout** là bố cục được xây dựng bằng cách sử dụng thuộc tính _float_ của CSS.
-- Với thuộc tính _float_, các phần tử có thể được bố trí về phía bên trái hoặc phía bên phải. Với các phần tử khi được cùng bố trí về một phía thì các phần tử sẽ nối đuôi nhau.
-- Một điều lưu ý là các phần tử _float_ chỉ có thể được bố trí theo phương ngang (trái hoặc phải) chứ không thể được bố trí theo phương dọc.
+- Ta biết rằng từ "float" có nghĩa là "nổi". Một trang HTML thông thường được trình bày theo dạng flow, tức là giống như một văn bản vậy, từng đoạn 1 xếp chồng lên nhau, cái nào viết trước nằm ở trên. Tuy nhiên, khi thiết kế bố cục website, có những phần tử không chỉ phân bố theo chiều dọc, mà còn theo chiều ngang, như ví dụ trên. Thuộc tính Float ra đời vì mục đích đó.
+- **Float layout** là bố cục được xây dựng bằng cách sử dụng thuộc tính _float_ của CSS. Thuộc tính Float có 5 giá trị: none, left, right, initial và inherit. Trong đó, giá trị left và right được sử dụng nhiều nhất.
+- Khi một phần tử nào đó được áp dụng thuộc tính _float_, nó nổi lên trên so với trang HTML (coi như nó tàng hình vậy). Lúc này, trang HTML sẽ coi như phần tử này không hề tồn tại, và chuyển các phần tử khác thế chỗ nó hoặc là làm cho các phần tử khác "nổi" xung quanh phần tử đó.
+- **Lưu ý**:
+  - Các phần tử _float_ chỉ có thể được bố trí theo phương ngang (trái hoặc phải) chứ không thể được bố trí theo phương dọc.
+  - Tương tự như thuộc tính position _absolute_, các phần tử được áp dụng thuộc tính _float_ sẽ nổi lên trên HTML (out of flow). Tuy nhiên các phần tử xung quanh vẫn sẽ bị tác động và "nổi" xung quanh phần tử _float_, còn phần tử được áp dụng thuộc tính position "absolute" sẽ không làm tác động được các phần tử xung quanh.
+  - Một lưu ý quan trọng là thẻ cha chứa các phần tử _float_ sẽ không tự điều chỉnh chiều cao cho các phần tử đó, bởi vì các phần tử _float_ lúc này sẽ _out of flow_ nên không còn thuộc trong thẻ cha đó, nên sẽ xảy ra hiện tượng thẻ cha thu gọn chiều cao và không còn chứa các phần tử _float_.
+- Ví dụ:
+
+Trước khi áp dụng thuộc tính _float_:
+
+![](/Screenshots/non-float.png)
+
+Sau khi áp dụng thuộc tính _float left_ cho thẻ img:
+
+![](/Screenshots/float.png)
+
+#### Thuộc tính _clear_
+
+- Thuộc tính _clear_ là thuộc tính được dùng khi ta muốn xóa đi ảnh hưởng của thuộc tính _float_, cụ thể là xóa đi ảnh hưởng của phần tử ngay trước phần tử ta áp dụng thuộc tính _clear_.
+- Thuộc tính _clear_ có 3 giá trị chinh: left, right và both. Trong đó, ta hầu như dùng giá trị both xuyên suốt quá trình thiết kế.
+- Chúng ta thường sử dụng thuộc tính _clear_ trong trường hợp khi chúng không muốn phần tử phía sau bị ảnh hưởng tới thuộc tính float. Ví dụ khi chúng ta có một trang html bao gồm 2 thẻ img và thẻ div chứa nội dung, trong đó thẻ img đã được _float left_ nên thẻ div chứa nội dung ở sau bị đây lên trên và đứng phía bên phải thẻ img (như hình bên dưới):
+
+![](/Screenshots/non-clear-example-code.png)
+
+![](/Screenshots/float.png)
+
+Giả sử bây giờ chúng ta muốn đẩy thẻ div nội dung xuống dưới để không nằm bên phải thẻ img nữa thì chúng ta phải làm sao?
+
+- Để có thể đẩy thẻ div nội dung xuống dưới thẻ img thì chúng ta có thể bỏ thuộc tính _float left_ của thẻ img đi, thì lúc này thẻ img sẽ nằm trong **normal flow** nên sẽ được bố trí theo thứ tự trước sau (thẻ img trước sẽ nằm trên, thẻ div nằm dưới). Ngoài ra chúng ta còn có thể sử dụng thuộc tính _clear_ cho thẻ div nhằm xóa bỏ đi sự ảnh hưởng thuộc tính _float_ của thẻ img trước đó, sau khi áp dụng thuộc tính _clear_ cho thẻ div chúng ta cũng sẽ có kết quả tương tự:
+
+![](/Screenshots/clear-example-code.png)
+
+![](/Screenshots/clear-example.png)
 
 ### Flexbox layout
 
