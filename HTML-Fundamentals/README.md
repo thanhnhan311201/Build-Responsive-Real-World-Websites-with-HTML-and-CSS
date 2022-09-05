@@ -108,7 +108,7 @@ display: block;
 - Không tạo ra dòng mới (xuống dòng) trước và sau phần tử.
 - Đối với các phần tử HTML cấp độ inline, thuộc tính _height_ và _width_ sẽ không áp dụng được.
 - Ngoài ra khi style css với thuộc tính _padding_ và _margin_ thì chỉ có thể style theo chiều ngang (bên trái và bên phải).
-- Các phần tử cấp độ inline: a, img, strong, em, button,...etc.
+- Các phần tử cấp độ inline: a, img, strong, em, button, pseudo-element,...etc.
 - Ngoài ra chúng ta có thể style các phần tử khác thành cấp độ inline bằng CSS.
 
 ```
