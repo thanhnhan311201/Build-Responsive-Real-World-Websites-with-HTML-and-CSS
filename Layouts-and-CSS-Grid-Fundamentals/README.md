@@ -105,7 +105,7 @@ Trong thẻ header có chứa 2 thẻ con là h1 và nav, tuy nhiên 2 phần t�
 
 - Tuy nhiên với cách như trên chúng ta sẽ làm cho file html bị lộn xộn không được gọn gàng với nhiều thẻ div rỗng (trong trường hợp có nhiều thẻ cha bị thu gọn chiều cao), để tránh việc tạo thẻ div rỗng chúng ta có thể sử dụng một thủ thuật bằng cách kết hợp thuộc tính _clear_ với **pseudo-elements**, thủ thuật đó được gọi là _clearfix_.
 - _clearfix_ là thủ thuật được sử dụng khá phổ biến trong cộng đồng CSS ngày nay.
-- Ý tưởng của thủ thuật cũng tương tư như cách chúng ta thêm một thẻ div rỗng vào ngay sau các phần tử _float_, tuy nhiên chúng ta sẽ sử dụng **pseudo-elemet after** để thêm một phần tử con ở cuối thay vì phải thêm thẻ div rỗng.
+- Ý tưởng của thủ thuật cũng tương tự như cách chúng ta thêm một thẻ div rỗng vào ngay sau các phần tử _float_, tuy nhiên chúng ta sẽ sử dụng **pseudo-element after** để thêm một phần tử con ở cuối thay vì phải thêm thẻ div rỗng.
 - Cách áp dụng:
 
 ![](/Screenshots/fix-collapse-height-code-2-html.png)
