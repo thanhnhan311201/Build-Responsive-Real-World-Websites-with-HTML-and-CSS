@@ -9,7 +9,10 @@
       - [Thuộc tính _clear_](#thuộc-tính-clear)
       - [Khắc phục hiện tượng thẻ cha thu gọn chiều cao](#khắc-phục-hiện-tượng-thẻ-cha-thu-gọn-chiều-cao)
     - [Flexbox layout](#flexbox-layout)
+      - [Flexbox là gì?](#flexbox-là-gì)
+      - [Cách sử dụng flexbox](#cách-sử-dụng-flexbox)
     - [CSS Grid layout](#css-grid-layout)
+      - [Cách sử dụng Grid](#cách-sử-dụng-grid)
 
 # Lý thuyết cơ bản về Layout và CSS Grid
 
@@ -127,13 +130,110 @@ Một điều lưu ý là thuộc tính _clear_ chỉ hoạt động trên các 
 
 ### Flexbox layout
 
+#### Flexbox là gì?
+
 - **Flexbox layout** là bố cục mà nó sẽ tự cân đối kích thước của các phần tử bên trong để hiển thị trên một webpage.
 - **Flexbox layout** được sử dụng để sắp xếp các phần tử trên cùng một chiều (có thể chiều ngang hoặc chiều dọc) mà không cần cho nó thuộc tính _float_.
 - **Flexbox layout** sẽ thích hợp khi chúng ta cần xây dựng **component layout** hoặc các bố cục đơn giản trong phạm vi nhỏ (những khung trong website), còn khi chúng ta cần xây dựng các bố cục phức tạp hơn như chia cột website thì chúng ta nên sử dụng **Grid layout**.
 - Để có thể sử dụng được kiểu bố cục **flexbox** chúng ta sẽ sử dụng thuộc tính _flexbox_ trong CSS.
+
+#### Cách sử dụng flexbox
+
+- Khi sử dụng thuộc tính flexbox, thì chúng ta sẽ css thuộc tính flexbox cho thẻ element cha và thẻ đó được gọi là "flex container", còn các thẻ element được bao bọc được gọi là "flex items".
+
+![](/Screenshots/flexbox-terminology.png)
+
+- Cheat sheet:
+
+![](/Screenshots/flexbox-cheat-sheet.png)
+
+- Thuộc tính order:
+
+  - Mặc định các flex item sẽ được set _order_ bằng 0 và các flex item sẽ được sắp xếp tương tự theo vị trí trong code.
+  - Khi chúng ta cần thay đổi một vị trí của một element thì chúng ta chỉ cần set _order_ tăng giảm tùy theo vị trí mà chúng ta cần set (ví dụ chúng ta cần đẩy element-5 lên đầu thì chúng ta cần cho order=-1, bởi vì các element còn lại order=0 thì element-5 được lên đầu).
+
+- flex-shrink, flex-grow, flex-basis:
+  - Thuộc tính _flex-basis_ cho phép chúng ta set chiều dài cho các flex-item, thuộc tính này sẽ thay cho thuộc tính _width_ khi chúng ta làm việc với flexbox.
+  - Thuộc tính flex-shrink cho phép các element tự co lại khi tổng width của các flex-item lớn hơn width của flex-container. Mặc định là 1 (cho phép tự co lại).
+  - Thuộc tính flex-grow sẽ ngược lại với flex-shrink cho phép các element tự mở rộng khi flex-container còn khoảng trống. Khi width của flex-container còn dư thì khoảng dư ấy sẽ được chia đều cho các flex-item. Mặc định là 0 (không cho phép tự mở rộng).
+  - Khi chúng ta set thuộc tính flex-grow cụ thể cho một flex-item, thì flex-item đó sẽ được mở rộng theo tỷ lệ được set. Ví dụ khi ta set flex-grow của element-5 bằng 2 thì element đó sẽ mở rộng gấp 2 lần so với các element còn lại.
+  - Thuộc tính flex là một cách viết tắt của cả 3 thuộc tính theo thứ tự flex-grow, flex-shrink và flex-basis (`flex: 0 1 auto` = `flex-grow: 0; flex-shrink: 1; flex-basis: auto;`).
+  - Một điều lưu ý là giá trị mặc định của _align-items_ là stretch, do đó nó sẽ kéo dài height các flex-item theo height của flex-item lớn nhất.
 
 ### CSS Grid layout
 
 - **Grid layout** là một bố cục hiện đại được sử dụng khá phổ biến ngày nay.
 - **Grid layout** được sử dụng để sắp xếp các phần tử theo dạng lưới 2 chiều, với **Grid layout** các phần tử được chia thành các cột và hàng nhằm tạo ra một bố cục nhất quán và liền mạch trên website.
 - **Grid layout** sẽ thích hợp khi chúng ta cần xây dựng **big page layout** hoặc các bố cục phức tạp như chia các cột website.
+
+#### Cách sử dụng Grid
+
+- Khi sử dụng thuộc tính grid, thì chúng ta sẽ css thuộc tính grid cho thẻ element cha và thẻ đó được gọi là "grid container", còn các thẻ element được bao bọc được gọi là "grid items".
+
+![](/Screenshots/grid-terminology1.png)
+
+![](/Screenshots/grid-terminology2.png)
+
+- Cheat sheet:
+
+![](/Screenshots/gird-cheat-sheet.png)
+
+- Đơn vị Fr:
+
+  - Đơn vị Fr được sử dụng trong grid layout, đơn vị này có ý nghĩa tương tự như flex-grow trong flexbox.
+  - Khi chúng ta sử dụng đơn vị Fr để định nghĩa kích thước cho cột hoặc dòng của các grid-item, thì css grid sẽ tính toán tổng kích thước của grid-container và sau đó sẽ chia cho các grid-item theo tỷ lệ.
+
+    ```
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    ```
+
+    Tạo ra một grid có 4 column, trong đó column đầu tiên có width gấp 3 các column còn lại.
+
+  - Một điều lưu ý khi chúng ta sử dụng đơn vị Fr để định nghĩa cho height cho các dòng, thì chúng ta cần phải định nghĩa height cho grid-container.
+  - **auto** được sử dụng khi chúng ta cần định nghĩa cho một width hoặc height là width hoặc height còn lại cho 1 grid-item.
+
+    ```
+    grid-template-columns: 3fr 1fr 1fr auto;
+    ```
+
+  - `repeat()` là một hàm cho phép chúng ta tạo các định nghĩa được lặp lại tùy theo số lần mà ta muốn.
+
+    ```
+    grid-template-columns: repeat(4, 1fr);
+    ```
+
+    Tạo ra một grid có 4 column có width bằng nhau.
+
+- Một điều lưu ý là khi chúng ta tạo các column và row không khớp với số lượng của content (tức tạo grid 3 cột 2 hàng nhưng có 8 content) thì sẽ có các content bị thừa, và các content này sẽ không được style width và height như ban đầu.
+- Trong thực tế, chúng ta chỉ nên định nghĩa số cột cho grid, còn số hàng thì do css grid tự định nghĩa để fit với content của chúng ta.
+- Bố trí vị trí của các grid-item:
+
+  - Chúng ta có thể dễ dàng thiết lập vị trí của các grid-item dựa vào 2 thuộc tính _grid-column_ và _grid-row_.
+  - Để có thể bố trí một grid-item vào một grid-cell cụ thể, thì chúng ta cần xác định được start-line và end-line row-line cũng như column-line của grid-cell mà ta cần bố trí, sau đó chúng ta sẽ sử dụng 2 thuộc tính _grid-column_ và _grid-row_ để bố trí (nhìn cheat-sheet).
+
+  ![](/Screenshots/grid-lines.png)
+
+  - Chúng ta đặt vị trí grid-item vào nhiều grid-cell để tạo các layout khác nhau cho các grid-item.
+  - Từ khóa span cho phép chúng ta mở rộng grid-cell (ví dụ: `grid-column: 3 / 5;` = `grid-column: 3 / span 2`).
+
+    ```
+    .el--8 {
+      grid-column: 2/ 3;
+      grid-row: 1 / 2;
+    }
+
+    .el--2 {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+    }
+
+    .el--5 {
+      grid-column: 3 / span 2;
+      grid-row: 3 / span 2;
+    }
+
+    .el--6 {
+      grid-column: 1 / span 2;
+      grid-row: 3 / span 2;
+    }
+    ```
