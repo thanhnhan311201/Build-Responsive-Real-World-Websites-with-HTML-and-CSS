@@ -39,6 +39,27 @@
       - [Áp dụng Visual Hierarchy cho text](#áp-dụng-visual-hierarchy-cho-text)
       - [Áp dụng Visutal Hierarchy để làm phân cấp sự nổi bật các thành phần trong website](#áp-dụng-visutal-hierarchy-để-làm-phân-cấp-sự-nổi-bật-các-thành-phần-trong-website)
       - [Một số thành phần cần được làm nổi bật trong một website](#một-số-thành-phần-cần-được-làm-nổi-bật-trong-một-website)
+    - [User Experience (UX)](#user-experience-ux)
+      - [User Experience là gì?](#user-experience-là-gì)
+      - [UI và UX trong thiết kế](#ui-và-ux-trong-thiết-kế)
+      - [UX Design =\> GOALS](#ux-design--goals)
+      - [Một số quy tắc trong thiết kế UX](#một-số-quy-tắc-trong-thiết-kế-ux)
+      - [Một số quy tắc UX trong thiết kế nội dung trang web](#một-số-quy-tắc-ux-trong-thiết-kế-nội-dung-trang-web)
+  - [Website Personalities Framework](#website-personalities-framework)
+    - [Định nghĩa về Website Personality](#định-nghĩa-về-website-personality)
+    - [Cách chọn Website Personality](#cách-chọn-website-personality)
+    - [Các mẫu Website Personality](#các-mẫu-website-personality)
+      - [Serious/Elegant](#seriouselegant-1)
+      - [Minimalist/Simple](#minimalistsimple-1)
+      - [Plain/Neutral](#plainneutral-1)
+      - [Bold/Confident](#boldconfident-1)
+      - [Calm/Peaceful](#calmpeaceful-1)
+      - [Startup/Upbeat](#startupupbeat-1)
+      - [Playful/Fun](#playfulfun-1)
+    - [Cách kết hợp các Website Personality](#cách-kết-hợp-các-website-personality)
+      - [Mô hình đặc tính Website Personality](#mô-hình-đặc-tính-website-personality)
+      - [Các mẫu kết hợp](#các-mẫu-kết-hợp)
+    - [Website Personality Templates](#website-personality-templates)
 
 # Web Design Rules and Framework
 
@@ -504,3 +525,128 @@ Icons là một phần không thể thiếu trong một website, icons sẽ giú
 - Thông thường trong một bảng sẽ có các cột và các dòng quan trọng hơn những cái còn lại, do đó chúng ta cần làm nổi bật các dòng hoặc các cột đó hơn.
 
 ![](/Screenshots/important-row-table.png)
+
+Đây là chỉ là danh sách các thành phần phổ biến, không bao hàm tất cả.
+
+### User Experience (UX)
+
+#### User Experience là gì?
+
+![](/Screenshots/UX-determination.png)
+
+#### UI và UX trong thiết kế
+
+![](/Screenshots/UI-and-UX.png)
+
+#### UX Design => GOALS
+
+![](/Screenshots/ux-design-goals.png)
+
+#### Một số quy tắc trong thiết kế UX
+
+![](/Screenshots/ux-rule-1.png)
+
+![](/Screenshots/ux-rule-2.png)
+
+![](/Screenshots/ux-rule-3.png)
+
+![](/Screenshots/ux-rule-4.png)
+
+![](/Screenshots/ux-rule-5.png)
+
+![](/Screenshots/ux-rule-6.png)
+
+![](/Screenshots/ux-rule-7.png)
+
+#### Một số quy tắc UX trong thiết kế nội dung trang web
+
+![](/Screenshots/ux-rule-8.png)
+
+![](/Screenshots/ux-rule-9.png)
+
+![](/Screenshots/ux-rule-10.png)
+
+![](/Screenshots/ux-rule-11.png)
+
+## Website Personalities Framework
+
+### Định nghĩa về Website Personality
+
+- Website Personality được hiểu nôm na là cảm giác, cảm xúc hay là "vibe" mà chúng ta muốn truyền tải đến người dùng thông qua trang web với nhiều bản thiết kế khác nhau, mỗi phong cách thiết kế sẽ mang lại những "vibe" khác nhau.
+
+### Cách chọn Website Personality
+
+- Để chọn được một website personality thì đầu tiên chúng ta phải xác định được thông điệp cũng như "vibe" mà chúng ta muốn truyền đến người dùng là gì, sau đó chọn ra một website personality.
+- Khi đã chọn được website personality thì dựa vào những đặc tính của website personality để thiết kế trang web cho mình (ví dụ: một trang web Serious/Elegant sẽ không dùng shadow và border-radius).
+
+![](/Screenshots/how-to-choose-website-personality.png)
+
+### Các mẫu Website Personality
+
+#### Serious/Elegant
+
+![](/Screenshots/personality-1.png)
+
+![](/Screenshots/personality-1-2.png)
+
+#### Minimalist/Simple
+
+![](/Screenshots/personality-2.png)
+
+![](/Screenshots/personality-2-2.png)
+
+#### Plain/Neutral
+
+![](/Screenshots/personality-3.png)
+
+![](/Screenshots/personality-3-2.png)
+
+#### Bold/Confident
+
+![](/Screenshots/personality-4.png)
+
+![](/Screenshots/personality-4-2.png)
+
+#### Calm/Peaceful
+
+![](/Screenshots/personality-5.png)
+
+![](/Screenshots/personality-5-2.png)
+
+#### Startup/Upbeat
+
+![](/Screenshots/personality-6.png)
+
+![](/Screenshots/personality-6-2.png)
+
+#### Playful/Fun
+
+![](/Screenshots/personality-7.png)
+
+![](/Screenshots/personality-7-2.png)
+
+### Cách kết hợp các Website Personality
+
+#### Mô hình đặc tính Website Personality
+
+![](/Screenshots/personality-advanced.png)
+
+- Để kết hợp các Website Personality lại với nhau, chúng ta có thể kết hợp các đặc tính của Website Personality mà chúng ta một kết hợp (ví dụ: giả sử chúng ta muốn làm một trang web về một công ty startup về bán thuốc, chúng ta có thể kết hợp Startup/Beat với Calm/Peaceful).
+
+#### Các mẫu kết hợp
+
+1. Minimalist/Simple kết hợp với Bold/Confident, Startup/Upbeat kết hợp Bold/Confident
+
+![](/Screenshots/personality-advanced-2.png)
+
+2. Bold/Confident kết hợp với Playful/Fun, Calm/Peaceful kết hợp với Bold/Confident
+
+![](/Screenshots/personality-advanced-3.png)
+
+3. Startup/Beat lết hợp với Calm/Peaceful
+
+![](/Screenshots/personality-advanced-4.png)
+
+### Website Personality Templates
+
+- Chúng ta có thể tham khảo một số template tại một số website như [Land Book](https://land-book.com/), [One Page Love](https://onepagelove.com/inspiration), [Awwwards](https://www.awwwards.com/websites/), [Screelane](https://screenlane.com/),...
