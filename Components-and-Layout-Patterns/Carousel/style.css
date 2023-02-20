@@ -1,0 +1,128 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+:root {
+  --main-color: #087f5b;
+  --main-color--lighter: #099268;
+  --grey-color: #343a40;
+  --grey-color--lighter: #868e96;
+
+  --testimonial-text-color: #e6fcf5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--grey-color);
+}
+
+.carousel {
+  width: 800px;
+  margin: 100px auto;
+  background-color: var(--main-color);
+  padding: 32px 48px 32px 86px;
+  border-radius: 8px;
+  color: var(--testimonial-text-color);
+
+  display: flex;
+  align-items: center;
+  gap: 86px;
+
+  position: relative;
+}
+
+img {
+  width: 200px;
+  border-radius: 8px;
+  transform: scale(1.5);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.testimonial {
+}
+
+.testimonial-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+
+.testimonial-author {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #c3fae8;
+}
+
+.testimonial-job {
+  font-size: 12px;
+  color: #c3fae8;
+}
+
+/* CONTROLS */
+.btn {
+  background-color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn--left {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+.btn--right {
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--main-color);
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 32px);
+
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border: 2px solid var(--main-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot--fill {
+  background-color: var(--main-color);
+}
