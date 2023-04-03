@@ -176,7 +176,7 @@ Một điều lưu ý là thuộc tính _clear_ chỉ hoạt động trên các 
 
 - Cheat sheet:
 
-![](/Screenshots/gird-cheat-sheet.png)
+![](/Screenshots/grid-cheat-sheet.png)
 
 - Đơn vị Fr:
 
